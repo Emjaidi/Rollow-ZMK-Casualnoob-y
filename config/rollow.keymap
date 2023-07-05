@@ -35,7 +35,7 @@ chosen {
 
         adjust_layer {
             if-layers = <0 2>;
-            then-layer = <ADJUST>;
+            then-layer = <3>;
         };
     };
 
