@@ -13,19 +13,24 @@
 #define RAISE 2
 #define ADJUST 3
 
-/{
-    // Activate ADJUST layer by pressing raise and lower
 
-    conditional_layers {
-        compatible = "zmk,conditional-layers";
+&mt {
+    tapping-term-ms = <190>;
+};
 
-        adjust_layer {
-            if-layers = <0 2>;
-            then-layer = <ADJUST>;
-        };
-    };
+/ {
 
-    keymap {
+  chosen {
+    zmk,battery = &vbatt;
+    zmk,matrix_transform = &five_column_transform;
+  };
+
+  vbatt: vbatt {
+      compatible = "zmk,battery-nrf-vddh";
+      label = "VBATT";
+  };
+
+        keymap {
         compatible = "zmk,keymap";
 
         default_layer {
@@ -111,3 +116,7 @@
         };
     };
 };
+
+
+
+    
