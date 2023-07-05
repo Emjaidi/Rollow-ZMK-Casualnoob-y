@@ -43,6 +43,7 @@
 
     // Activate ADJUST layer by pressing raise and lower
 
+/*
     conditional_layers {
         compatible = "zmk,conditional-layers";
 
@@ -51,6 +52,7 @@
             then-layer = <3>;
         };
     };
+*/
 
     keymap {
         compatible = "zmk,keymap";
