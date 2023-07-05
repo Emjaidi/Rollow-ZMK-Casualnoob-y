@@ -13,6 +13,11 @@
 #define RAISE 2
 #define ADJUST 3
 
+
+&mt {
+    tapping-term-ms = <200>;
+};
+
 /{
     // Activate ADJUST layer by pressing raise and lower
 chosen {
@@ -56,7 +61,7 @@ chosen {
             bindings = <
                    
     &none  &none  &kp W  &kp F          &kp Q      &none                         &kp TAB        &kp Z      &kp H        &kp K     &none       &none
-    &none  &kp A  &kp R  &mt LALT S     &kp T      &mt LGUI G                    &mt RGUI L     &kp N      &mt RALT V   &kp I     &kp O       &none
+    &none  &kp A  &kp R  &mt LALT S     &kp T      &mt LGUI G                    &mt RGUI L     &kp N      &mt RALT E   &kp I     &kp O       &none
     &none  &kp X  &kp B  &kp C          &kp D      &mt LCTRL P                   &mt RSHIFT V   &kp M      &kp U        &kp Y     &kp J       &none
                          &kp COMMA      &kp SPACE  &kp LSHIFT                    &kp RCTRL      &to 1      &kp DOT     
             >;
