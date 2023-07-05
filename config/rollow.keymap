@@ -80,9 +80,9 @@ chosen {
 
            bindings = <              
     &none  &none    &kp LBKT   &kp RBKT     &kp LALT     &none                                   &kp TAB           &kp N7     &kp N8       &kp N9    &none       &none
-    &none  &kp TAB  &kp BSLH   &kp SEMI     &kp EQUAL    &mt LGUI SQT                            &mt RGUI SLASH    &kp N4     &kp N5       &kp N6    &kp BSPC    &none
-    &none  &kp ESC  &kp COMMA  &kp DOT      &kp MINUS    &mt LCTRL GRAVE                 	 &mt RSHIFT N0     &kp N1     &kp N2       &kp N3    &kp RET     &none
-                               &none    &to 0        &mt RSHIFT SPACE                              &kp RCTRL         &to 2       &none       
+    &none  &kp TAB  &kp BSLH   &kp SEMI     &kp EQUAL    &mt LGUI SQT                            &mt RALT SLASH    &kp N4     &kp N5       &kp N6    &kp BSPC    &none
+    &none  &kp ESC  &kp COMMA  &kp DOT      &kp MINUS    &mt LCTRL GRAVE                 	     &mt RSHIFT N0     &kp N1     &kp N2       &kp N3    &kp RET     &none
+                               &none    &to 0        &mt RSHIFT SPACE                            &kp RCTRL         &to 2      &none       
             >;
 
             sensor-bindings = <&inc_dec_kp DOWN UP &inc_dec_kp RIGHT LEFT>;
@@ -100,7 +100,7 @@ chosen {
     &none  &none   &kp K_REDO &kp K_UNDO &kp LALT     &none                       &kp TAB     &none     &kp UP    &none      &none      &none
     &none  &trans  &kp K_COPY &kp K_CUT  &kp K_PASTE  &kp LGUI                    &kp RALT    &kp LEFT 	&kp DOWN  &kp RIGHT  &trans     &none
     &none  &trans  &kp COMMA  &kp DOT    &kp MINUS    &kp LCTRL                   &kp RSHIFT  &kp DEL  	&kp HOME  &kp END    &trans     &none
-                              &trans     &to 0        &kp LSHIFT                  &kp RCTRL   &to 1    	&trans       
+                              &trans     &to 0        &kp LSHIFT                  &kp RCTRL   &to 0    	&trans       
             >;
 
             sensor-bindings = <&inc_dec_kp DOWN UP &inc_dec_kp RIGHT LEFT>;
