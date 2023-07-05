@@ -97,10 +97,10 @@ chosen {
             //              |      |       |       |      |      |  |      |      |      |       |      |
 
             bindings = <              
-    &none  &none   &kp K_REDO &kp K_UNDO &kp LALT       &none                             &kp TAB     &none     &kp UP    &none      &none      &none
-    &none  &trans  &kp K_COPY &kp K_CUT  &kp K_PASTE    &mt LGUI SQT                      &mt RGUI    &kp LEFT 	&kp DOWN  &kp RIGHT  &trans     &none
-    &none  &trans  &kp COMMA  &kp DOT      &kp MINUS    &mt LCTRL GRAVE                   &kp RSHIFT  &kp DEL  	&kp HOME  &kp END    &trans     &none
-                               &trans    &to 0        &kp LSHIFT                          &kp RCTRL   &to 1    	&trans       
+    &none  &none   &kp K_REDO &kp K_UNDO &kp LALT     &none                       &kp TAB     &none     &kp UP    &none      &none      &none
+    &none  &trans  &kp K_COPY &kp K_CUT  &kp K_PASTE  &kp LGUI                    &kp RALT    &kp LEFT 	&kp DOWN  &kp RIGHT  &trans     &none
+    &none  &trans  &kp COMMA  &kp DOT    &kp MINUS    &kp LCTRL                   &kp RSHIFT  &kp DEL  	&kp HOME  &kp END    &trans     &none
+                              &trans     &to 0        &kp LSHIFT                  &kp RCTRL   &to 1    	&trans       
             >;
 
             sensor-bindings = <&inc_dec_kp DOWN UP &inc_dec_kp RIGHT LEFT>;
