@@ -17,7 +17,14 @@
 };
 
 / {
-    // Activate ADJUST layer by pressing raise and lower
+    behaviors { 
+        ht_tp: hold-tap-tap-preferred {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells=<2>;
+            flavor="tap-preferred";
+            tapping-term-ms=<200>;
+        };
+    };
 
     chosen {
         zmk,battery = &vbatt;
@@ -30,6 +37,7 @@
         label = "VBATT";
     };
 
+ // Activate ADJUST layer by pressing raise and lower
     conditional_layers {
         compatible = "zmk,conditional-layers";
 
@@ -61,8 +69,8 @@
 
             bindings = <
 &none  &none  &kp W       &kp F      &kp Q        &none       &kp TAB  &kp Z       &kp H  &kp K  &none  &none
-&none  &kp A  &kp R  &mt LALT S      &kp T   &mt LGUI G    &mt RGUI L  &kp N  &mt RALT E  &kp I  &kp O  &none
-&none  &kp X  &kp B       &kp C      &kp D  &mt LCTRL P  &mt RSHIFT V  &kp M       &kp U  &kp Y  &kp J  &none
+&none  &kp A  &kp R  &ht_tp LALT S      &kp T   &ht_tp LGUI G    &ht_tp RGUI L  &kp N  &ht_tp RALT E  &kp I  &kp O  &none
+&none  &kp X  &kp B       &kp C      &kp D  &ht_tp LCTRL P  &ht_tp RSHIFT V  &kp M       &kp U  &kp Y  &kp J  &none
                       &kp COMMA  &kp SPACE   &kp LSHIFT     &kp RCTRL  &to 1     &kp DOT
             >;
 
@@ -80,9 +88,9 @@
 
             bindings = <
 &none    &none   &kp LBKT  &kp RBKT   &kp LALT             &none         &kp TAB  &kp N7  &kp N8  &kp N9     &none  &none
-&none  &kp TAB   &kp BSLH  &kp SEMI  &kp EQUAL      &mt LGUI SQT  &mt RALT SLASH  &kp N4  &kp N5  &kp N6  &kp BSPC  &none
-&none  &kp ESC  &kp COMMA   &kp DOT  &kp MINUS   &mt LCTRL GRAVE   &mt RSHIFT N0  &kp N1  &kp N2  &kp N3   &kp RET  &none
-                              &none      &to 0  &mt RSHIFT SPACE       &kp RCTRL   &to 2   &none
+&none  &kp TAB   &kp BSLH  &kp SEMI  &kp EQUAL      &ht_tp LGUI SQT  &ht_tp RALT SLASH  &kp N4  &kp N5  &kp N6  &kp BSPC  &none
+&none  &kp ESC  &kp COMMA   &kp DOT  &kp MINUS   &ht_tp LCTRL GRAVE   &ht_tp RSHIFT N0  &kp N1  &kp N2  &kp N3   &kp RET  &none
+                              &none      &to 0  &ht_tp RSHIFT SPACE       &kp RCTRL   &to 2   &none
             >;
 
             sensor-bindings = <&inc_dec_kp DOWN UP &inc_dec_kp RIGHT LEFT>;
@@ -116,8 +124,8 @@
         Adjust_layer {
             bindings = <
 &none    &none   &kp LBKT   &kp RBKT   &kp LALT            &none         &kp TAB  &kp N7  &kp N8  &kp N9     &none  &none
-&none  &kp TAB   &kp BSLH   &kp SEMI  &kp EQUAL     &mt LGUI SQT  &mt RGUI SLASH  &kp N4  &kp N5  &kp N6  &kp BSPC  &none
-&none  &kp ESC  &kp COMMA    &kp DOT  &kp MINUS  &mt LCTRL GRAVE      &kp RSHIFT  &kp N1  &kp N2  &kp N3   &kp RET  &none
+&none  &kp TAB   &kp BSLH   &kp SEMI  &kp EQUAL     &ht_tp LGUI SQT  &ht_tp RGUI SLASH  &kp N4  &kp N5  &kp N6  &kp BSPC  &none
+&none  &kp ESC  &kp COMMA    &kp DOT  &kp MINUS  &ht_tp LCTRL GRAVE      &kp RSHIFT  &kp N1  &kp N2  &kp N3   &kp RET  &none
                            &kp COMMA      &to 0       &kp LSHIFT       &kp RCTRL   &to 2  &kp N0
             >;
 
@@ -125,3 +133,4 @@
         };
     };
 };
+
