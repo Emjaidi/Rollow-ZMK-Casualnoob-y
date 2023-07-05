@@ -46,10 +46,10 @@
  */
             bindings = <
                    
-    &none  &none  &kp W  &kp F          &kp Q      &none           &none &none              &kp TAB        &kp Z      &kp H        &kp K     &none       &none
-    &none  &kp A  &kp R  &mt LALT S     &kp T      &mt LGUI G      &none &none              &mt RGUI L     &kp N      &mt RALT V   &kp I     &kp O       &none
-    &none  &kp X  &kp B  &kp C          &kp D      &mt LCTRL P     &none &none              &mt RSHIFT V   &kp M      &kp U        &kp Y     &kp J       &none
-                         &kp COMMA      &kp SPACE  &kp LSHIFT      &none &none              &kp RCTRL      &to 1      &kp DOT     
+    &none  &none  &kp W  &kp F          &kp Q      &none                         &kp TAB        &kp Z      &kp H        &kp K     &none       &none
+    &none  &kp A  &kp R  &mt LALT S     &kp T      &mt LGUI G                    &mt RGUI L     &kp N      &mt RALT V   &kp I     &kp O       &none
+    &none  &kp X  &kp B  &kp C          &kp D      &mt LCTRL P                   &mt RSHIFT V   &kp M      &kp U        &kp Y     &kp J       &none
+                         &kp COMMA      &kp SPACE  &kp LSHIFT                    &kp RCTRL      &to 1      &kp DOT     
             >;
 
              sensor-bindings = <&inc_dec_kp DOWN UP &inc_dec_kp RIGHT LEFT>;
@@ -65,10 +65,10 @@
             //               |     |      |      |      |        |  |       |      |       |       |      |
 
            bindings = <              
-    &none  &none    &kp LBKT   &kp RBKT     &kp LALT     &none                 &none &none                  &kp TAB           &kp N7     &kp N8       &kp N9    &none       &none
-    &none  &kp TAB  &kp BSLH   &kp SEMI     &kp EQUAL    &mt LGUI SQT          &none &none                  &mt RGUI SLASH    &kp N4     &kp N5       &kp N6    &kp BSPC    &none
-    &none  &kp ESC  &kp COMMA  &kp DOT      &kp MINUS    &mt LCTRL GRAVE       &none &none          	     &kp RSHIFT        &kp N1     &kp N2       &kp N3    &kp RET     &none
-                               &kp COMMA    &to 0        &kp LSHIFT            &none &none                  &kp RCTRL         &to 2      &kp N0       
+    &none  &none    &kp LBKT   &kp RBKT     &kp LALT     &none                                   &kp TAB           &kp N7     &kp N8       &kp N9    &none       &none
+    &none  &kp TAB  &kp BSLH   &kp SEMI     &kp EQUAL    &mt LGUI SQT                            &mt RGUI SLASH    &kp N4     &kp N5       &kp N6    &kp BSPC    &none
+    &none  &kp ESC  &kp COMMA  &kp DOT      &kp MINUS    &mt LCTRL GRAVE                 	     &kp RSHIFT        &kp N1     &kp N2       &kp N3    &kp RET     &none
+                               &kp COMMA    &to 0        &kp LSHIFT                              &kp RCTRL         &to 2      &kp N0       
             >;
 
             sensor-bindings = <&inc_dec_kp DOWN UP &inc_dec_kp RIGHT LEFT>;
@@ -83,10 +83,10 @@
             //              |      |       |       |      |      |  |      |      |      |       |      |
 
             bindings = <              
-    &none  &none    &kp LBKT   &kp RBKT     &kp LALT     &none                 &none &none                  &kp TAB           &kp N7     &kp N8       &kp N9    &none       &none
-    &none  &kp TAB  &kp BSLH   &kp SEMI     &kp EQUAL    &mt LGUI SQT          &none &none                  &mt RGUI SLASH    &kp N4     &kp N5       &kp N6    &kp BSPC    &none
-    &none  &kp ESC  &kp COMMA  &kp DOT      &kp MINUS    &mt LCTRL GRAVE       &none &none          	     &kp RSHIFT        &kp N1     &kp N2       &kp N3    &kp RET     &none
-                               &kp COMMA    &to 0        &kp LSHIFT            &none &none                  &kp RCTRL         &to 2      &kp N0       
+    &none  &none    &kp LBKT   &kp RBKT     &kp LALT     &none                                   &kp TAB           &kp N7     &kp N8       &kp N9    &none       &none
+    &none  &kp TAB  &kp BSLH   &kp SEMI     &kp EQUAL    &mt LGUI SQT                            &mt RGUI SLASH    &kp N4     &kp N5       &kp N6    &kp BSPC    &none
+    &none  &kp ESC  &kp COMMA  &kp DOT      &kp MINUS    &mt LCTRL GRAVE                 	     &kp RSHIFT        &kp N1     &kp N2       &kp N3    &kp RET     &none
+                               &kp COMMA    &to 0        &kp LSHIFT                              &kp RCTRL         &to 2      &kp N0       
             >;
 
             sensor-bindings = <&inc_dec_kp DOWN UP &inc_dec_kp RIGHT LEFT>;
@@ -101,10 +101,10 @@
 
         Adjust_layer {
             bindings = <              
-    &none  &none    &kp LBKT   &kp RBKT     &kp LALT     &none                 &none &none                  &kp TAB           &kp N7     &kp N8       &kp N9    &none       &none
-    &none  &kp TAB  &kp BSLH   &kp SEMI     &kp EQUAL    &mt LGUI SQT          &none &none                  &mt RGUI SLASH    &kp N4     &kp N5       &kp N6    &kp BSPC    &none
-    &none  &kp ESC  &kp COMMA  &kp DOT      &kp MINUS    &mt LCTRL GRAVE       &none &none          	     &kp RSHIFT        &kp N1     &kp N2       &kp N3    &kp RET     &none
-                               &kp COMMA    &to 0        &kp LSHIFT            &none &none                  &kp RCTRL         &to 2      &kp N0       
+    &none  &none    &kp LBKT   &kp RBKT     &kp LALT     &none                                   &kp TAB           &kp N7     &kp N8       &kp N9    &none       &none
+    &none  &kp TAB  &kp BSLH   &kp SEMI     &kp EQUAL    &mt LGUI SQT                            &mt RGUI SLASH    &kp N4     &kp N5       &kp N6    &kp BSPC    &none
+    &none  &kp ESC  &kp COMMA  &kp DOT      &kp MINUS    &mt LCTRL GRAVE                 	     &kp RSHIFT        &kp N1     &kp N2       &kp N3    &kp RET     &none
+                               &kp COMMA    &to 0        &kp LSHIFT                              &kp RCTRL         &to 2      &kp N0       
             >;
 
             sensor-bindings = <&inc_dec_kp DOWN UP &inc_dec_kp RIGHT LEFT>;
