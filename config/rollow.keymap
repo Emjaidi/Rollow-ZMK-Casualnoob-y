@@ -112,9 +112,9 @@
             //              |      |       |       |      |      |  |      |      |      |       |      |
 
             bindings = <
-&none  &none    &kp K_REDO  &kp K_UNDO  &kp LALT     &none       &kp TAB     &none     &kp UP      &none      &none     &none
-&none  &kp TAB  &kp K_COPY  &kp K_CUT   &kp K_PASTE  &kp LGUI    &kp RALT    &kp LEFT  &kp DOWN    &kp RIGHT  &kp BSPC  &none
-&none  &kp ESC  &kp COMMA   &kp DOT     &kp MINUS    &kp LCTRL   &kp RSHIFT  &kp DEL   &kp HOME    &kp END    &kp RET   &none
+&none  &none    &kp K_REDO  &kp K_UNDO  &kp LALT     &none       &kp TAB     &none     &kp UP      &bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1
+&none  &kp TAB  &kp K_COPY  &kp K_CUT   &kp K_PASTE  &kp LGUI    &kp RALT    &kp LEFT  &kp DOWN    &kp RIGHT   &kp BSPC      &bt BT_SEL 2
+&none  &kp ESC  &kp COMMA   &kp DOT     &kp MINUS    &kp LCTRL   &kp RSHIFT  &kp DEL   &kp HOME    &kp END     &kp RET       &bt BT_SEL 3
                             &bt BT_PRV  &to 0        &kp LSHIFT  &kp RCTRL   &to 1     &bt BT_NXT
             >;
 
