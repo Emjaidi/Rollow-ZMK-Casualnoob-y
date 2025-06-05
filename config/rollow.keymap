@@ -50,6 +50,30 @@
     };
 */
 
+    combos {
+        compatible = "zmk,combos";
+
+        EnterRight {
+            bindings = <&kp RET>;
+            key-positions = <7 8 9>;
+        };
+
+        BacspacL {
+            bindings = <&kp BACKSPACE>;
+            key-positions = <32 33 34>;
+        };
+
+        RetLef {
+            bindings = <&kp RET>;
+            key-positions = <2 3 4>;
+        };
+
+        BSpaceLef {
+            bindings = <&kp BACKSPACE>;
+            key-positions = <26 27 28>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
