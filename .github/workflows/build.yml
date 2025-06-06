@@ -1,5 +1,4 @@
 on: [push, pull_request, workflow_dispatch]
-
 name: Build
 
 jobs:
@@ -10,15 +9,15 @@ jobs:
       matrix: ${{ steps.set-matrix.outputs.matrix }}
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
       - name: Install yaml2json
         run: python3 -m pip install remarshal
       - id: set-matrix
         name: Fetch Build Matrix
         run: |
           matrix=$(yaml2json build.yaml | jq -c .)
-          yaml2json build.yaml
-          echo "name=matrix::${matrix}"  >> $GITHUB_OUTPUT
+          echo "matrix=${matrix}" >> $GITHUB_OUTPUT
+
   build:
     runs-on: ubuntu-latest
     container:
@@ -41,11 +40,13 @@ jobs:
             DISPLAY_NAME="${{ matrix.board }}"
             ARTIFACT_NAME="${{ matrix.board }}-zmk"
           fi
-          echo "name=extra_cmake_args::${EXTRA_CMAKE_ARGS}" >> $GITHUB_OUTPUT
-          echo "name=artifact_name::${ARTIFACT_NAME}" >> $GITHUB_OUTPUT
-          echo "name=display_name::${DISPLAY_NAME}" >> $GITHUB_OUTPUT
+          echo "extra_cmake_args=${EXTRA_CMAKE_ARGS}" >> $GITHUB_OUTPUT
+          echo "artifact_name=${ARTIFACT_NAME}" >> $GITHUB_OUTPUT
+          echo "display_name=${DISPLAY_NAME}" >> $GITHUB_OUTPUT
+      
       - name: Checkout
         uses: actions/checkout@v4
+      
       - name: Cache west modules
         uses: actions/cache@v4
         env:
@@ -62,28 +63,33 @@ jobs:
             ${{ runner.os }}-build-${{ env.cache-name }}-
             ${{ runner.os }}-build-
             ${{ runner.os }}-
+      
       - name: West Init
         run: west init -l config
+      
       - name: West Update
         run: west update
+      
       - name: West Zephyr export
         run: west zephyr-export
-      - name: West Build (${{ steps.variables.outputs.display-name }})
+      
+      - name: West Build (${{ steps.variables.outputs.display_name }})
         run: |
-          west build -s zmk/app -b ${{ matrix.board }} -- -DZMK_CONFIG=${GITHUB_WORKSPACE}/config ${{ steps.variables.outputs.extra-cmake-args }} ${{ matrix.cmake-args }}
-      - name: ${{ steps.variables.outputs.display-name }} Kconfig file
+          west build -s zmk/app -b ${{ matrix.board }} -- -DZMK_CONFIG=${GITHUB_WORKSPACE}/config ${{ steps.variables.outputs.extra_cmake_args }} ${{ matrix.cmake-args }}
+      
+      - name: ${{ steps.variables.outputs.display_name }} Kconfig file
         run: cat build/zephyr/.config | grep -v "^#" | grep -v "^$"
+      
       - name: Rename artifacts
         run: |
           mkdir build/artifacts
-          if [ -f build/zephyr/zmk.uf2 ]
-          then
-            cp build/zephyr/zmk.uf2 "build/artifacts/${{ steps.variables.outputs.artifact-name }}.uf2"
-          elif [ -f build/zephyr/zmk.hex ]
-          then
-            cp build/zephyr/zmk.hex "build/artifacts/${{ steps.variables.outputs.artifact-name }}.hex"
+          if [ -f build/zephyr/zmk.uf2 ]; then
+            cp build/zephyr/zmk.uf2 "build/artifacts/${{ steps.variables.outputs.artifact_name }}.uf2"
+          elif [ -f build/zephyr/zmk.hex ]; then
+            cp build/zephyr/zmk.hex "build/artifacts/${{ steps.variables.outputs.artifact_name }}.hex"
           fi
-      - name: Archive (${{ steps.variables.outputs.display-name }})
+      
+      - name: Archive (${{ steps.variables.outputs.display_name }})
         uses: actions/upload-artifact@v4
         with:
           name: firmware
