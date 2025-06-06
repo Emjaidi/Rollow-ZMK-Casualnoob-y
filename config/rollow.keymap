@@ -60,7 +60,7 @@
 
         BacspacL {
             bindings = <&kp BACKSPACE>;
-            key-positions = <32 33 34>;
+            key-positions = <33 32 31>;
         };
 
         RetLef {
@@ -71,6 +71,16 @@
         BSpaceLef {
             bindings = <&kp BACKSPACE>;
             key-positions = <26 27 28>;
+        };
+
+        Escape {
+            bindings = <&kp ESCAPE>;
+            key-positions = <13 14>;
+        };
+
+        Rescape {
+            bindings = <&kp ESCAPE>;
+            key-positions = <22 21>;
         };
     };
 
@@ -150,10 +160,10 @@
 
         Function_layer {
             bindings = <
-&none  &none    &kp LBKT  &kp RBKT      &kp LALT  &none       &kp TAB     &kp N7   &kp PRINTSCREEN  &kp N9   &none     &none
-&none  &kp TAB  &kp F4    &kp F5        &kp F6    &kp LGUI    &kp RGUI    &kp F10  &kp F11          &kp F12  &kp BSPC  &none
-&none  &kp ESC  &kp F1    &kp F2        &kp F3    &kp LCTRL   &kp RSHIFT  &kp F7   &kp F8           &kp F9   &kp RET   &none
-                          &kp LEFT_ALT  &to 0     &kp LSHIFT  &kp RCTRL   &to 1    &kp RIGHT_SHIFT
+&none  &none    &kp K_COPY    &kp UP_ARROW    &kp K_PASTE  &kp K_CUT   &kp F9     &kp F10  &kp F11          &kp F12  &none     &none
+&none  &kp TAB  &kp LEFT      &kp DOWN_ARROW  &kp RIGHT    &kp LGUI    &kp F5     &kp F6   &kp F7           &kp F8   &kp BSPC  &none
+&none  &kp ESC  &kp LEFT_ALT  &none           &none        &kp LCTRL   &kp F1     &kp F2   &kp F3           &kp F4   &kp RET   &none
+                              &kp LEFT_ALT    &to 0        &kp LSHIFT  &kp RCTRL  &to 1    &kp RIGHT_SHIFT
             >;
 
             sensor-bindings = <&inc_dec_kp DOWN UP &inc_dec_kp RIGHT LEFT>;
