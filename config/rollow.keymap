@@ -142,10 +142,10 @@
             //              |      |       |       |      |      |  |      |      |      |       |      |
 
             bindings = <
-&none  &none    &kp LC(C)  &kp UP      &kp LC(V)  &kp LC(X)   &kp TAB          &to 3                &kp K_SCROLL_UP    &kp HOME               &none     &none
-&none  &kp TAB  &kp LEFT   &kp DOWN    &kp RIGHT  &kp LGUI    &kp RALT         &kp LS(K_SCROLL_UP)  &kp K_SCROLL_DOWN  &kp LS(K_SCROLL_DOWN)  &kp BSPC  &none
-&none  &kp ESC  &kp COMMA  &kp DOT     &kp MINUS  &kp LCTRL   &kp RIGHT_SHIFT  &kp DEL              &kp INSERT         &kp END                &kp RET   &none
-                           &bt BT_PRV  &to 0      &kp LSHIFT  &kp RCTRL        &to 1                &bt BT_NXT
+&none  &none    &kp LC(C)  &kp UP    &kp LC(V)  &kp LC(X)   &kp TAB    &kp RSHIFT           &kp K_SCROLL_UP    &kp HOME               &none     &none
+&none  &kp TAB  &kp LEFT   &kp DOWN  &kp RIGHT  &kp LGUI    &kp RALT   &kp LS(K_SCROLL_UP)  &kp K_SCROLL_DOWN  &kp LS(K_SCROLL_DOWN)  &kp BSPC  &none
+&none  &kp ESC  &kp COMMA  &kp DOT   &kp MINUS  &kp LCTRL   &to 3      &kp DEL              &kp INSERT         &kp END                &kp RET   &none
+                           &none     &to 0      &kp LSHIFT  &kp RCTRL  &to 1                &kp SPACE
             >;
 
             sensor-bindings = <&inc_dec_kp DOWN UP &inc_dec_kp RIGHT LEFT>;
@@ -161,8 +161,8 @@
         Function_layer {
             bindings = <
 &bt BT_CLR    &none    &kp K_COPY    &kp UP_ARROW    &kp K_PASTE  &kp K_CUT   &kp F9     &kp F10  &kp F11          &kp F12  &none     &bt BT_SEL 4
-&bt BT_SEL 0  &kp TAB  &kp LEFT      &kp DOWN_ARROW  &kp RIGHT    &kp LGUI    &kp F5     &kp F6   &kp F7           &kp F8   &kp BSPC  &bt BT_SEL 2
-&bt BT_SEL 1  &kp ESC  &kp LEFT_ALT  &none           &none        &kp LCTRL   &kp F1     &kp F2   &kp F3           &kp F4   &kp RET   &bt BT_SEL 3
+&bt BT_SEL 0  &kp TAB  &kp LEFT      &kp DOWN_ARROW  &kp RIGHT    &kp LGUI    &kp F5     &kp F6   &kp F7           &kp F8   &kp BSPC  &bt BT_SEL 3
+&bt BT_SEL 1  &kp ESC  &kp LEFT_ALT  &none           &none        &kp LCTRL   &kp F1     &kp F2   &kp F3           &kp F4   &kp RET   &bt BT_SEL 2
                                      &kp LEFT_ALT    &to 0        &kp LSHIFT  &kp RCTRL  &to 1    &kp RIGHT_SHIFT
             >;
 
